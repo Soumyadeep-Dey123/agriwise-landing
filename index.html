@@ -1,26 +1,814 @@
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>agriwise-landing</title>
-    <meta name="description" content="Lovable Generated Project" />
-    <meta name="author" content="Lovable" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgriSmart - Empowering farmers with smart technology</title>
+  <meta name="description" content="AgriSmart provides intelligent agricultural solutions for modern farming">
+  
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+  
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css">
+  
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+  <!-- Navigation Bar -->
+  <nav class="navbar navbar-expand-lg fixed-top py-3" id="mainNav">
+    <div class="container px-4 px-lg-5">
+      <a class="navbar-brand" href="#page-top">
+        <span class="brand-text">AgriSmart</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <div class="hamburger-icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" href="#hero">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#features">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          <li class="nav-item"><a class="nav-link login-btn" href="#" data-bs-toggle="modal" data-bs-target="#loginModal">Login</a></li>
+          <li class="nav-item">
+            <button id="theme-toggle" class="btn theme-toggle" aria-label="Toggle theme">
+              <i class="fas fa-moon"></i>
+              <i class="fas fa-sun"></i>
+            </button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
 
-    <meta property="og:title" content="Lovable Generated Project" />
-    <meta property="og:description" content="Lovable Generated Project" />
-    <meta property="og:type" content="website" />
-    <meta property="og:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
+  <!-- Login Modal -->
+  <div class="modal fade" id="loginModal" tabindex="-1" aria-labelledby="loginModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header border-0">
+          <h5 class="modal-title" id="loginModalLabel">Welcome Back</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form>
+            <div class="mb-4">
+              <label for="email" class="form-label">Email address</label>
+              <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+            </div>
+            <div class="mb-4">
+              <label for="password" class="form-label">Password</label>
+              <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
+            </div>
+            <div class="mb-4 form-check">
+              <input type="checkbox" class="form-check-input" id="remember">
+              <label class="form-check-label" for="remember">Remember me</label>
+            </div>
+            <button type="submit" class="btn btn-primary w-100">Sign In</button>
+          </form>
+          <div class="mt-4 text-center">
+            <a href="#" class="text-decoration-none">Forgot password?</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@lovable_dev" />
-    <meta name="twitter:image" content="https://lovable.dev/opengraph-image-p98pqg.png" />
-  </head>
+  <!-- Hero Section -->
+  <section id="hero" class="d-flex align-items-center min-vh-100">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-6 text-lg-start text-center">
+          <span class="badge mb-2">Agricultural Innovation</span>
+          <h1 class="display-3 fw-bold mb-4 reveal-text">Empowering farmers with smart technology</h1>
+          <p class="lead mb-5 reveal-text-delay">Revolutionize your farming practices with AI-driven insights, predictive analytics, and expert guidance</p>
+          <div class="d-flex flex-column flex-sm-row justify-content-center justify-content-lg-start gap-3">
+            <a href="#features" class="btn btn-primary btn-lg px-4 me-sm-3">Explore Features</a>
+            <a href="#about" class="btn btn-outline-secondary btn-lg px-4">Learn More</a>
+          </div>
+        </div>
+        <div class="col-lg-6 mt-5 mt-lg-0 text-center">
+          <div class="hero-image-container">
+            <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1932&q=80" alt="Smart farming technology" class="img-fluid rounded-4 shadow-lg hero-image">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="hero-shape">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path fill-opacity="1" d="M0,128L80,144C160,160,320,192,480,186.7C640,181,800,139,960,133.3C1120,128,1280,160,1360,176L1440,192L1440,320L1360,320C1280,320,1120,320,960,320C800,320,640,320,480,320C320,320,160,320,80,320L0,320Z"></path>
+      </svg>
+    </div>
+  </section>
 
-  <body>
-    <div id="root"></div>
-    <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
-    <script type="module" src="/src/main.tsx"></script>
-  </body>
+  <!-- Features Section -->
+  <section id="features" class="py-8">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge mb-2">Our Capabilities</span>
+        <h2 class="display-5 fw-bold mb-3">Intelligent Farming Solutions</h2>
+        <p class="lead text-secondary mx-auto" style="max-width: 700px;">Discover how our advanced agricultural technology can transform your farming operations</p>
+      </div>
+      
+      <div class="row g-4 py-5">
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-seedling"></i>
+            </div>
+            <h3>Crop Prediction</h3>
+            <p>Predict the best crops to plant based on soil parameters, climate data, and historical yield information.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-flask"></i>
+            </div>
+            <h3>Fertilizer Recommendation</h3>
+            <p>Get personalized fertilizer recommendations based on soil composition and crop requirements.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-bug"></i>
+            </div>
+            <h3>Disease Detection</h3>
+            <p>Identify plant diseases instantly by uploading images and receive treatment recommendations.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-chart-line"></i>
+            </div>
+            <h3>Price Forecasting</h3>
+            <p>Access accurate market price predictions to maximize your profits and plan your harvests.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-robot"></i>
+            </div>
+            <h3>AI Assistant</h3>
+            <p>Interact with our intelligent chatbot to get instant answers to all your farming questions.</p>
+          </div>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fas fa-water"></i>
+            </div>
+            <h3>Irrigation Planning</h3>
+            <p>Optimize your water usage with smart irrigation recommendations based on weather forecasts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Crop Prediction Section -->
+  <section id="crop-prediction" class="py-8 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <span class="badge mb-2">Smart Analysis</span>
+          <h2 class="display-5 fw-bold mb-3">Crop Prediction</h2>
+          <p class="lead mb-4">Our advanced algorithms analyze multiple factors to recommend the best crops for your land.</p>
+          <p class="mb-4">Enter your soil parameters and get instant AI-powered recommendations tailored to your specific conditions.</p>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center me-4">
+              <div class="icon-square bg-primary text-light flex-shrink-0 me-2">
+                <i class="fas fa-check"></i>
+              </div>
+              <span>98% Accuracy</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="icon-square bg-primary text-light flex-shrink-0 me-2">
+                <i class="fas fa-database"></i>
+              </div>
+              <span>Historical Data</span>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="card-title mb-4">Soil Parameter Analysis</h3>
+              <form id="crop-prediction-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="nitrogen" class="form-label">Nitrogen (N)</label>
+                    <input type="number" class="form-control" id="nitrogen" placeholder="0-140" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phosphorous" class="form-label">Phosphorous (P)</label>
+                    <input type="number" class="form-control" id="phosphorous" placeholder="5-145" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="potassium" class="form-label">Potassium (K)</label>
+                    <input type="number" class="form-control" id="potassium" placeholder="5-205" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="ph" class="form-label">pH Value</label>
+                    <input type="number" step="0.1" class="form-control" id="ph" placeholder="0-14" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="rainfall" class="form-label">Rainfall (mm)</label>
+                    <input type="number" step="0.1" class="form-control" id="rainfall" placeholder="20-300" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="temperature" class="form-label">Temperature (°C)</label>
+                    <input type="number" step="0.1" class="form-control" id="temperature" placeholder="8-45" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="humidity" class="form-label">Humidity (%)</label>
+                    <input type="number" step="0.1" class="form-control" id="humidity" placeholder="14-100" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="soil-type" class="form-label">Soil Type</label>
+                    <select class="form-select" id="soil-type" required>
+                      <option value="" selected disabled>Select soil type</option>
+                      <option value="sandy">Sandy</option>
+                      <option value="loamy">Loamy</option>
+                      <option value="clay">Clay</option>
+                      <option value="silt">Silty</option>
+                      <option value="chalky">Chalky</option>
+                      <option value="peaty">Peaty</option>
+                    </select>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Predict Suitable Crops</button>
+                  </div>
+                </div>
+              </form>
+              <div id="crop-result" class="mt-4 d-none">
+                <div class="alert alert-success">
+                  <h5 class="alert-heading">Recommended Crops:</h5>
+                  <ul class="mb-0" id="crop-recommendations">
+                    <!-- Results will be added here by JavaScript -->
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Fertilizer Prediction Section -->
+  <section id="fertilizer-prediction" class="py-8">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-7 order-lg-1 order-2">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="card-title mb-4">Fertilizer Recommendation</h3>
+              <form id="fertilizer-prediction-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="f-soil-type" class="form-label">Soil Type</label>
+                    <select class="form-select" id="f-soil-type" required>
+                      <option value="" selected disabled>Select soil type</option>
+                      <option value="sandy">Sandy</option>
+                      <option value="loamy">Loamy</option>
+                      <option value="clay">Clay</option>
+                      <option value="silt">Silty</option>
+                      <option value="chalky">Chalky</option>
+                      <option value="peaty">Peaty</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="crop-type" class="form-label">Crop Type</label>
+                    <select class="form-select" id="crop-type" required>
+                      <option value="" selected disabled>Select crop</option>
+                      <option value="rice">Rice</option>
+                      <option value="wheat">Wheat</option>
+                      <option value="maize">Maize</option>
+                      <option value="cotton">Cotton</option>
+                      <option value="sugarcane">Sugarcane</option>
+                      <option value="tomato">Tomato</option>
+                      <option value="potato">Potato</option>
+                      <option value="coffee">Coffee</option>
+                    </select>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="f-nitrogen" class="form-label">Nitrogen Level</label>
+                    <input type="number" class="form-control" id="f-nitrogen" placeholder="Current level (0-140)" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="f-phosphorous" class="form-label">Phosphorous Level</label>
+                    <input type="number" class="form-control" id="f-phosphorous" placeholder="Current level (5-145)" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="f-potassium" class="form-label">Potassium Level</label>
+                    <input type="number" class="form-control" id="f-potassium" placeholder="Current level (5-205)" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="f-ph" class="form-label">pH Value</label>
+                    <input type="number" step="0.1" class="form-control" id="f-ph" placeholder="0-14" required>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Get Fertilizer Recommendation</button>
+                  </div>
+                </div>
+              </form>
+              <div id="fertilizer-result" class="mt-4 d-none">
+                <div class="alert alert-success">
+                  <h5 class="alert-heading">Recommended Fertilizer:</h5>
+                  <p id="fertilizer-recommendation" class="mb-0"></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-5 mb-5 mb-lg-0 order-lg-2 order-1">
+          <span class="badge mb-2">Nutrient Optimization</span>
+          <h2 class="display-5 fw-bold mb-3">Fertilizer Prediction</h2>
+          <p class="lead mb-4">Get personalized fertilizer recommendations based on your soil composition and crop requirements.</p>
+          <p class="mb-4">Our system analyzes nutrient deficiencies and suggests the most appropriate fertilizers to maximize your yield.</p>
+          <div class="d-flex align-items-center">
+            <div class="d-flex align-items-center me-4">
+              <div class="icon-square bg-primary text-light flex-shrink-0 me-2">
+                <i class="fas fa-leaf"></i>
+              </div>
+              <span>Eco-friendly Options</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="icon-square bg-primary text-light flex-shrink-0 me-2">
+                <i class="fas fa-dollar-sign"></i>
+              </div>
+              <span>Cost-effective</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Disease Prediction Section -->
+  <section id="disease-prediction" class="py-8 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge mb-2">Early Detection</span>
+        <h2 class="display-5 fw-bold mb-3">Disease Prediction</h2>
+        <p class="lead mb-4">Identify plant diseases instantly by uploading images and receive treatment recommendations</p>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-lg-8">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <div class="text-center mb-4">
+                <div class="disease-upload-icon mb-3">
+                  <i class="fas fa-camera"></i>
+                </div>
+                <h3 class="card-title">Upload Plant Image</h3>
+                <p class="text-muted">Supported formats: JPG, PNG, WEBP</p>
+              </div>
+              <form id="disease-prediction-form">
+                <div class="mb-4">
+                  <div class="upload-area" id="upload-area">
+                    <input type="file" id="disease-image" class="file-input" accept="image/*" required>
+                    <div class="upload-area-inner">
+                      <div class="upload-area-content">
+                        <span class="upload-area-icon">
+                          <i class="fas fa-cloud-upload-alt"></i>
+                        </span>
+                        <span class="upload-area-text">Drag and drop or click to browse</span>
+                      </div>
+                    </div>
+                    <div class="upload-area-preview d-none" id="image-preview-container">
+                      <img id="image-preview" src="#" alt="Preview">
+                      <button type="button" class="btn btn-sm btn-outline-danger remove-image" id="remove-image">
+                        <i class="fas fa-times"></i>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <select class="form-select" id="plant-type" required>
+                    <option value="" selected disabled>Select plant type</option>
+                    <option value="tomato">Tomato</option>
+                    <option value="potato">Potato</option>
+                    <option value="apple">Apple</option>
+                    <option value="grape">Grape</option>
+                    <option value="corn">Corn</option>
+                    <option value="rice">Rice</option>
+                    <option value="wheat">Wheat</option>
+                    <option value="cotton">Cotton</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">Analyze Image</button>
+              </form>
+              <div id="disease-result" class="mt-4 d-none">
+                <div class="alert alert-warning">
+                  <h5 class="alert-heading" id="disease-name">Disease Name</h5>
+                  <p id="disease-description">Description of the disease and its characteristics.</p>
+                  <hr>
+                  <h6>Recommended Treatment:</h6>
+                  <p id="disease-treatment" class="mb-0">Treatment recommendations will appear here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chatbot Section -->
+  <section id="chatbot" class="py-8">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-5 mb-5 mb-lg-0">
+          <span class="badge mb-2">24/7 Support</span>
+          <h2 class="display-5 fw-bold mb-3">AgriSmart Assistant</h2>
+          <p class="lead mb-4">Your personal agricultural expert available anytime, anywhere</p>
+          <p class="mb-4">Ask questions about crop management, disease identification, market trends, or any farming-related topic to get instant, accurate answers.</p>
+          <div class="d-flex align-items-center mb-4">
+            <div class="d-flex align-items-center me-4">
+              <div class="icon-square bg-primary text-light flex-shrink-0 me-2">
+                <i class="fas fa-brain"></i>
+              </div>
+              <span>AI-Powered</span>
+            </div>
+            <div class="d-flex align-items-center">
+              <div class="icon-square bg-primary text-light flex-shrink-0 me-2">
+                <i class="fas fa-history"></i>
+              </div>
+              <span>24/7 Availability</span>
+            </div>
+          </div>
+          <p>Try asking about:</p>
+          <div class="d-flex flex-wrap gap-2 mb-4">
+            <span class="badge bg-light text-dark p-2">Pest Control</span>
+            <span class="badge bg-light text-dark p-2">Crop Rotation</span>
+            <span class="badge bg-light text-dark p-2">Water Management</span>
+            <span class="badge bg-light text-dark p-2">Market Prices</span>
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="chatbot-container">
+            <div class="chatbot-header">
+              <div class="chatbot-avatar">
+                <i class="fas fa-robot"></i>
+              </div>
+              <div>
+                <h5 class="mb-0">AgriSmart Assistant</h5>
+                <small class="text-success">Online</small>
+              </div>
+            </div>
+            <div class="chatbot-messages" id="chatbox">
+              <div class="message bot-message">
+                <div class="message-content">
+                  <p>Hello! I'm your AgriSmart Assistant. How can I help with your farming questions today?</p>
+                </div>
+                <div class="message-time">Just now</div>
+              </div>
+            </div>
+            <div class="chatbot-input">
+              <form id="chat-form">
+                <div class="input-group">
+                  <input type="text" id="chat-input" class="form-control" placeholder="Type your question here..." required>
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fas fa-paper-plane"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-8 bg-light">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="badge mb-2">Success Stories</span>
+        <h2 class="display-5 fw-bold mb-3">What Farmers Say</h2>
+        <p class="lead text-secondary mx-auto" style="max-width: 700px;">Hear from farmers who have transformed their agricultural practices with AgriSmart</p>
+      </div>
+      
+      <div class="row">
+        <div class="col-12">
+          <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="testimonial-card">
+                  <div class="testimonial-content">
+                    <div class="testimonial-stars mb-3">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"AgriSmart's crop prediction tool has completely transformed my farm. I've increased my yield by 40% in just one season by following their recommendations."</p>
+                    <div class="testimonial-author">
+                      <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="John Doe">
+                      </div>
+                      <div class="testimonial-info">
+                        <h5>John Doe</h5>
+                        <p>Wheat Farmer, Iowa</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonial-card">
+                  <div class="testimonial-content">
+                    <div class="testimonial-stars mb-3">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                    </div>
+                    <p class="testimonial-text">"The disease prediction feature saved my entire tomato crop. I identified a blight early and was able to treat it before it spread through my greenhouse."</p>
+                    <div class="testimonial-author">
+                      <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Sarah Johnson">
+                      </div>
+                      <div class="testimonial-info">
+                        <h5>Sarah Johnson</h5>
+                        <p>Organic Farmer, California</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div class="testimonial-card">
+                  <div class="testimonial-content">
+                    <div class="testimonial-stars mb-3">
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star"></i>
+                      <i class="fas fa-star-half-alt"></i>
+                    </div>
+                    <p class="testimonial-text">"I've been farming for 30 years, and I've never seen technology this helpful. The chatbot answers all my questions instantly, even at 2 AM when I'm worried about my crops."</p>
+                    <div class="testimonial-author">
+                      <div class="testimonial-avatar">
+                        <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="Miguel Hernandez">
+                      </div>
+                      <div class="testimonial-info">
+                        <h5>Miguel Hernandez</h5>
+                        <p>Rice Farmer, Texas</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#testimonialCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-8">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-lg-5">
+          <span class="badge mb-2">Get In Touch</span>
+          <h2 class="display-5 fw-bold mb-4">Contact Us</h2>
+          <p class="lead mb-4">Have questions or need assistance? We're here to help.</p>
+          
+          <div class="contact-info">
+            <div class="d-flex mb-4">
+              <div class="contact-icon me-3">
+                <i class="fas fa-map-marker-alt"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Address</h5>
+                <p>123 AgriTech Lane, Silicon Valley, CA 94025</p>
+              </div>
+            </div>
+            
+            <div class="d-flex mb-4">
+              <div class="contact-icon me-3">
+                <i class="fas fa-phone-alt"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Phone</h5>
+                <p>+1 (555) 123-4567</p>
+              </div>
+            </div>
+            
+            <div class="d-flex mb-4">
+              <div class="contact-icon me-3">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <h5 class="mb-1">Email</h5>
+                <p>info@agrismart.tech</p>
+              </div>
+            </div>
+          </div>
+          
+          <div class="social-links mt-5">
+            <h5 class="mb-3">Follow Us</h5>
+            <div class="d-flex gap-3">
+              <a href="#" class="social-link">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="#" class="social-link">
+                <i class="fab fa-youtube"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-7">
+          <div class="card border-0 shadow-sm">
+            <div class="card-body p-4 p-md-5">
+              <h3 class="card-title mb-4">Send us a message</h3>
+              <form id="contact-form">
+                <div class="row g-3">
+                  <div class="col-md-6">
+                    <label for="name" class="form-label">Full Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="John Doe" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="email" class="form-label">Email Address</label>
+                    <input type="email" class="form-control" id="email" placeholder="john@example.com" required>
+                  </div>
+                  <div class="col-md-6">
+                    <label for="phone" class="form-label">Phone Number</label>
+                    <input type="tel" class="form-control" id="phone" placeholder="+1 (555) 123-4567">
+                  </div>
+                  <div class="col-md-6">
+                    <label for="subject" class="form-label">Subject</label>
+                    <select class="form-select" id="subject" required>
+                      <option value="" selected disabled>Select a subject</option>
+                      <option value="general">General Inquiry</option>
+                      <option value="support">Technical Support</option>
+                      <option value="pricing">Pricing Information</option>
+                      <option value="partnership">Partnership Opportunities</option>
+                    </select>
+                  </div>
+                  <div class="col-12">
+                    <label for="message" class="form-label">Message</label>
+                    <textarea class="form-control" id="message" rows="5" placeholder="How can we help you?" required></textarea>
+                  </div>
+                  <div class="col-12">
+                    <div class="form-check">
+                      <input class="form-check-input" type="checkbox" id="newsletter" checked>
+                      <label class="form-check-label" for="newsletter">
+                        Subscribe to our newsletter for farming tips and updates
+                      </label>
+                    </div>
+                  </div>
+                  <div class="col-12 mt-4">
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer py-5">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-about">
+            <a class="footer-logo mb-4 d-inline-block" href="#page-top">
+              <span class="brand-text">AgriSmart</span>
+            </a>
+            <p class="mb-4">Revolutionizing farming with cutting-edge AI technology, precise predictions, and data-driven insights for modern agriculture.</p>
+            <div class="d-flex gap-3">
+              <a href="#" class="social-link-footer">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+              <a href="#" class="social-link-footer">
+                <i class="fab fa-twitter"></i>
+              </a>
+              <a href="#" class="social-link-footer">
+                <i class="fab fa-instagram"></i>
+              </a>
+              <a href="#" class="social-link-footer">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Explore</h5>
+          <ul class="footer-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#crop-prediction">Crop Prediction</a></li>
+            <li><a href="#fertilizer-prediction">Fertilizer</a></li>
+            <li><a href="#disease-prediction">Disease Detection</a></li>
+            <li><a href="#chatbot">AI Assistant</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Resources</h5>
+          <ul class="footer-links">
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Documentation</a></li>
+            <li><a href="#">Tutorials</a></li>
+            <li><a href="#">API Reference</a></li>
+            <li><a href="#">Knowledge Base</a></li>
+            <li><a href="#">Community</a></li>
+          </ul>
+        </div>
+        
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading">Subscribe</h5>
+          <p class="mb-4">Get the latest agricultural insights and updates delivered to your inbox.</p>
+          <form class="footer-subscribe-form">
+            <div class="input-group mb-3">
+              <input type="email" class="form-control" placeholder="Your email address" required>
+              <button class="btn btn-primary" type="submit">Subscribe</button>
+            </div>
+          </form>
+          <p class="footer-subscribe-text">By subscribing, you agree to our Privacy Policy and consent to receive updates from our company.</p>
+        </div>
+      </div>
+      
+      <hr class="my-4">
+      
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-start">
+          <p class="mb-md-0">© 2023 AgriSmart. All rights reserved.</p>
+        </div>
+        <div class="col-md-6 text-center text-md-end">
+          <ul class="footer-bottom-links">
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+            <li><a href="#">Cookie Policy</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top Button -->
+  <a href="#" class="back-to-top" id="backToTop">
+    <i class="fas fa-arrow-up"></i>
+  </a>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  
+  <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
+  <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+  
+  <!-- Custom JS -->
+  <script src="script.js"></script>
+</body>
 </html>
