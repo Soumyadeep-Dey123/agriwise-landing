@@ -148,9 +148,9 @@ const Index = () => {
           </div>
           
           <div id="crop-carousel" className="carousel-container overflow-hidden">
-            <div class="carousel-slides d-flex transition-all">
+            <div className="carousel-slides d-flex transition-all">
               {/* Slide 1 */}
-              <div class="carousel-slide flex-shrink-0 w-100">
+              <div className="carousel-slide flex-shrink-0 w-100">
                 <div className="row g-4">
                   <div className="col-md-6">
                     <div className="card h-100 shadow-sm border-0">
@@ -233,7 +233,7 @@ const Index = () => {
               </div>
               
               {/* Slide 2 */}
-              <div class="carousel-slide flex-shrink-0 w-100">
+              <div className="carousel-slide flex-shrink-0 w-100">
                 <div className="row g-4">
                   <div className="col-md-6">
                     <div className="card h-100 shadow-sm border-0">
@@ -302,8 +302,8 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-4">
-            <div id="crop-indicators" class="carousel-indicators-custom">
-              <button type="button" class="active" data-slide="0"></button>
+            <div id="crop-indicators" className="carousel-indicators-custom">
+              <button type="button" className="active" data-slide="0"></button>
               <button type="button" data-slide="1"></button>
             </div>
           </div>
@@ -328,9 +328,9 @@ const Index = () => {
           </div>
           
           <div id="fertilizer-carousel" className="carousel-container overflow-hidden">
-            <div class="carousel-slides d-flex transition-all">
+            <div className="carousel-slides d-flex transition-all">
               {/* Slide 1 */}
-              <div class="carousel-slide flex-shrink-0 w-100">
+              <div className="carousel-slide flex-shrink-0 w-100">
                 <div className="row g-4">
                   <div className="col-md-6">
                     <div className="card h-100 shadow-sm border-0">
@@ -415,7 +415,7 @@ const Index = () => {
               </div>
               
               {/* Slide 2 */}
-              <div class="carousel-slide flex-shrink-0 w-100">
+              <div className="carousel-slide flex-shrink-0 w-100">
                 <div className="row g-4">
                   <div className="col-md-6">
                     <div className="card h-100 shadow-sm border-0">
@@ -491,8 +491,8 @@ const Index = () => {
           </div>
           
           <div className="text-center mt-4">
-            <div id="fertilizer-indicators" class="carousel-indicators-custom">
-              <button type="button" class="active" data-slide="0"></button>
+            <div id="fertilizer-indicators" className="carousel-indicators-custom">
+              <button type="button" className="active" data-slide="0"></button>
               <button type="button" data-slide="1"></button>
             </div>
           </div>
