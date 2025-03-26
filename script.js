@@ -1,29 +1,6 @@
 
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function() {
-  // Toggle theme (dark/light mode)
-  const themeToggle = document.getElementById('theme-toggle');
-  const body = document.body;
-
-  // Check if user has a preference stored
-  const savedTheme = localStorage.getItem('theme');
-  if (savedTheme) {
-    body.classList.remove('light-mode', 'dark-mode');
-    body.classList.add(savedTheme);
-  }
-
-  themeToggle.addEventListener('click', function() {
-    if (body.classList.contains('light-mode')) {
-      body.classList.remove('light-mode');
-      body.classList.add('dark-mode');
-      localStorage.setItem('theme', 'dark-mode');
-    } else {
-      body.classList.remove('dark-mode');
-      body.classList.add('light-mode');
-      localStorage.setItem('theme', 'light-mode');
-    }
-  });
-
   // Navbar scroll behavior
   const navbar = document.getElementById('mainNav');
 
@@ -64,6 +41,82 @@ document.addEventListener('DOMContentLoaded', function() {
           });
         }
       }
+    });
+  });
+
+  // Carousel functionality for Crop Prediction
+  const cropCarouselContainer = document.getElementById('crop-carousel');
+  const cropSlides = cropCarouselContainer.querySelector('.carousel-slides');
+  const cropPrevBtn = document.getElementById('crop-prev-btn');
+  const cropNextBtn = document.getElementById('crop-next-btn');
+  const cropIndicators = document.querySelectorAll('#crop-indicators button');
+  let cropCurrentSlide = 0;
+  
+  function slideCrop(index) {
+    cropCurrentSlide = index;
+    cropSlides.style.transform = `translateX(-${index * 100}%)`;
+    
+    // Update indicators
+    cropIndicators.forEach((indicator, i) => {
+      if (i === index) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+  }
+  
+  cropPrevBtn.addEventListener('click', () => {
+    cropCurrentSlide = cropCurrentSlide === 0 ? 1 : 0;
+    slideCrop(cropCurrentSlide);
+  });
+  
+  cropNextBtn.addEventListener('click', () => {
+    cropCurrentSlide = cropCurrentSlide === 0 ? 1 : 0;
+    slideCrop(cropCurrentSlide);
+  });
+  
+  cropIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      slideCrop(index);
+    });
+  });
+  
+  // Carousel functionality for Fertilizer Prediction
+  const fertilizerCarouselContainer = document.getElementById('fertilizer-carousel');
+  const fertilizerSlides = fertilizerCarouselContainer.querySelector('.carousel-slides');
+  const fertilizerPrevBtn = document.getElementById('fertilizer-prev-btn');
+  const fertilizerNextBtn = document.getElementById('fertilizer-next-btn');
+  const fertilizerIndicators = document.querySelectorAll('#fertilizer-indicators button');
+  let fertilizerCurrentSlide = 0;
+  
+  function slideFertilizer(index) {
+    fertilizerCurrentSlide = index;
+    fertilizerSlides.style.transform = `translateX(-${index * 100}%)`;
+    
+    // Update indicators
+    fertilizerIndicators.forEach((indicator, i) => {
+      if (i === index) {
+        indicator.classList.add('active');
+      } else {
+        indicator.classList.remove('active');
+      }
+    });
+  }
+  
+  fertilizerPrevBtn.addEventListener('click', () => {
+    fertilizerCurrentSlide = fertilizerCurrentSlide === 0 ? 1 : 0;
+    slideFertilizer(fertilizerCurrentSlide);
+  });
+  
+  fertilizerNextBtn.addEventListener('click', () => {
+    fertilizerCurrentSlide = fertilizerCurrentSlide === 0 ? 1 : 0;
+    slideFertilizer(fertilizerCurrentSlide);
+  });
+  
+  fertilizerIndicators.forEach((indicator, index) => {
+    indicator.addEventListener('click', () => {
+      slideFertilizer(index);
     });
   });
 
@@ -131,6 +184,7 @@ document.addEventListener('DOMContentLoaded', function() {
         selectedCrops.forEach(crop => {
           const li = document.createElement('li');
           li.textContent = crop;
+          li.className = 'list-group-item';
           recommendationsList.appendChild(li);
         });
         

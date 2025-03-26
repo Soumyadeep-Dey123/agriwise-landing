@@ -24,10 +24,8 @@ Global Styles
   --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   --transition: all 0.3s ease;
   --max-width: 1200px;
-}
-
-/* Light Mode */
-.light-mode {
+  
+  /* Default light mode colors */
   --bg-primary: var(--white);
   --bg-secondary: var(--light);
   --text-primary: var(--dark);
@@ -36,18 +34,6 @@ Global Styles
   --card-bg: var(--white);
   --navbar-bg: rgba(255, 255, 255, 0.95);
   --hero-shape-fill: var(--light-gray);
-}
-
-/* Dark Mode */
-.dark-mode {
-  --bg-primary: #121212;
-  --bg-secondary: #1E1E1E;
-  --text-primary: #E0E0E0;
-  --text-secondary: #ABABAB;
-  --border-color: rgba(255, 255, 255, 0.1);
-  --card-bg: #1E1E1E;
-  --navbar-bg: rgba(18, 18, 18, 0.95);
-  --hero-shape-fill: #2A2A2A;
 }
 
 * {
@@ -227,40 +213,6 @@ Navigation
   color: var(--white);
 }
 
-.theme-toggle {
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 50%;
-  border: none;
-  background: transparent;
-  cursor: pointer;
-  margin-left: 0.5rem;
-  color: var(--text-primary);
-}
-
-.theme-toggle:hover {
-  background-color: var(--bg-secondary);
-}
-
-.light-mode .fa-sun {
-  display: none;
-}
-
-.light-mode .fa-moon {
-  display: block;
-}
-
-.dark-mode .fa-sun {
-  display: block;
-}
-
-.dark-mode .fa-moon {
-  display: none;
-}
-
 .hamburger-icon {
   width: 30px;
   height: 20px;
@@ -408,6 +360,49 @@ Features Section
   justify-content: center;
   border-radius: 8px;
   font-size: 16px;
+}
+
+/* 
+=========================================
+Carousel Sections
+=========================================
+*/
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-slides {
+  display: flex;
+  transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+  min-width: 100%;
+  flex-shrink: 0;
+}
+
+.carousel-indicators-custom {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 15px;
+}
+
+.carousel-indicators-custom button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #ddd;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.carousel-indicators-custom button.active {
+  background-color: var(--primary);
 }
 
 /* 
@@ -862,13 +857,6 @@ Responsive Styles
     margin: 0.5rem 1rem;
     display: block;
     text-align: center;
-  }
-  
-  .theme-toggle {
-    margin: 0.5rem 1rem;
-    width: auto;
-    display: flex;
-    justify-content: flex-start;
   }
   
   .testimonial-card {
